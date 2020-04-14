@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename ='css/style.css') }}">
-    <script type="text/javascript" src="{{url_for('static', filename = 'js/main.js')}}"></script>
-    <title>Hola Mundo desde Flask</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
     <h2>Hola {{ username }}</h2>
     <p>Estas en el curso de {{ course }}</p>
     {% if is_premium %}
@@ -27,7 +20,8 @@
     {% endif %}
 
     <img src="{{ url_for('static', filename = 'images/descarga.jpg')}}" alt="">
+{% endblock content %}
     
     
-</body>
-</html>
+    
+
